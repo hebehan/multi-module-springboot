@@ -11,5 +11,89 @@
 
     <artifactId>generater</artifactId>
 
+    <packaging>pom</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hebehan</groupId>
+            <artifactId>dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hebehan</groupId>
+            <artifactId>service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hebehan</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jooq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.7</version>
+                <configuration>
+                             <configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
+                             <verbose>true</verbose>
+                            <overwrite>true</overwrite>
+                        </configuration>
+                   <!--<executions>-->
+                         <!--<execution>-->
+                             <!--<id>Generate MyBatis Artifacts</id>-->
+                            <!--<goals>-->
+                                 <!--<goal>generate</goal>-->
+                             <!--</goals>-->
+                         <!--</execution>-->
+                     <!--</executions>-->
+                     <dependencies>
+                         <dependency>
+                             <groupId>org.mybatis.generator</groupId>
+                             <artifactId>mybatis-generator-core</artifactId>
+                             <version>1.3.7</version>
+                         </dependency>
+                     </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
